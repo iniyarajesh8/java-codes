@@ -21,16 +21,17 @@ public class searchsub {
         }
         for(int i=0;i<count1;i++)
         {
-            for(int j=0;j<count2;j++)
+            if(arr1[i]==arr2[i])
             {
-                if(arr1[i]==arr2[j])
+                flag=0;
+                if(arr1[count1-count2]==arr2[count2-1])
                 {
-                    flag=0;
+                    break;
                 }
-                else{
-                    flag=1;
-                    
-                }
+            }
+            else
+            {
+                flag=1;
             }
         }
         if(flag==0)
