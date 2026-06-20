@@ -1,6 +1,6 @@
 package test;
 import java.util.Scanner;
-public class duplicate {
+public class perfectmeth {
     static int[] create(int n)
     {
         Scanner sc = new Scanner(System.in);
@@ -19,16 +19,22 @@ public class duplicate {
             System.out.print(a[i]+"\t");
         }
     }
-    static void dupe(int[] a,int n)
+    static void perfect(int[] a,int n)
     {
-        for(int i = 0;i<n;i++)
+        int sum;
+        for(int i=0;i<n;i++)
         {
-            for(int k=i+1;k<n;k++)
+            sum=0;
+            for(int j=a[i]-1;j>0;j--)
             {
-                if(i==k)
+                if(a[i]%j==0)
                 {
-                    System.out.print(i+"\t");
+                    sum+=j;
                 }
+            }
+            if(sum==a[i])
+            {
+                System.out.print(a[i]);
             }
         }
     }
@@ -40,7 +46,7 @@ public class duplicate {
         int a[] = create(s);
         display(a,s);
         System.out.println();
-        System.out.println("duplicate numbers");
-        dupe(a,s);
+        System.out.println("perfect numbers");
+        perfect(a,s);
     }
 }
